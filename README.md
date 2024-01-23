@@ -1,4 +1,4 @@
-# Kamban-Project-ReactJS
+# Kanban-Project-ReactJS
 ![](./public/assets/KambanGif.gif)
 
 > Projeto de um site de Kamban, onde é possivel criar notas, editar e move-las. O projeto foi feito em ReactJS
@@ -7,17 +7,17 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas em melhorias.
 
-## 🚀 Instalando Kamban-Project-ReactJS
+## 🚀 Instalando Kanban-Project-ReactJS
 
-Para instalar o Kamban-Project-ReactJS, siga estas etapas:<br>
+Para instalar o Kanban-Project-ReactJS, siga estas etapas:<br>
 
 ```
 git clone https://github.com/Borguezani/Kamban-Project-ReactJS.git
 ```
 
-## ☕ Usando Kamban-Project-ReactJS
+## ☕ Usando Kanban-Project-ReactJS
 
-Para usar Kamban-Project-ReactJS, siga estas etapas:
+Para usar Kanban-Project-ReactJS, siga estas etapas:
 
 ```
 In the project directory, you can run:
