@@ -12,24 +12,15 @@ export default function Home() {
   const [openEditDialog, setOpenEditDialog] = useState(false);
   const [openMoveDialog, setOpenMoveDialog] = useState(false);
   const [editedId, setEditedId] = useState(null);
-  const [columns, setColumns] = useState([
-    {
-      name: "To Do",
-      id: "0",
-      items: [...items],
-    },
-    {
-      name: "Doing",
-      id: "1",
-      items: [...items],
-    },
-    {
-      name: "Done",
-      id: "2",
-      items: [...items],
-    },
+  const [columns, setColumns] = useState( 
+    JSON.parse(localStorage.getItem('userColumns')) || [
+    { name: 'To Do', id: '0', items: [] },
+    { name: 'Doing', id: '1', items: [] },
+    { name: 'Done', id: '2', items: [] },
   ]);
-
+  const saveColumnsToLocalStorage = (columns) => {
+    localStorage.setItem('userColumns', JSON.stringify(columns));
+  };
   const dialogHandler = () => {
     setOpenDialog(!openDialog);
   };
@@ -50,13 +41,13 @@ export default function Home() {
         }
         return column;
       });
+      saveColumnsToLocalStorage(updatedColumns);
       return updatedColumns;
     });
   };
   const editCardId = (card) => {
     setOpenEditDialog(true);
     setEditedId(card.id);
-    console.log(card.id);
   };
   const pickColumnId = (columnid) => {
     setColumnId(columnid);
@@ -74,6 +65,7 @@ export default function Home() {
         }
         return column;
       });
+      saveColumnsToLocalStorage(updatedColumns);
       return updatedColumns;
     });
   };
@@ -88,6 +80,7 @@ export default function Home() {
         }
         return column;
       });
+      saveColumnsToLocalStorage(updatedColumns);
       return updatedColumns;
     });
   };
@@ -105,6 +98,7 @@ export default function Home() {
         }
         return column;
       });
+      saveColumnsToLocalStorage(updatedColumns);
       return updatedColumns;
     });
   };
@@ -144,7 +138,7 @@ export default function Home() {
 
           return column;
         });
-
+        saveColumnsToLocalStorage(updatedColumns);
         return updatedColumns;
       });
     } else {
